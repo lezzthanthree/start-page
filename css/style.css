@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+*
+{
+    padding: 0px;
+    margin: 0px;
+    color: #e0e0e0;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+}
+
+body
+{
+    background-color: #202020;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+main
+{
+    margin: 50px;
+    position: relative;
+    display: flex;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+#photo
+{
+    width: 50%;
+    transition: 1s ease-in-out;
+}
+
+#rina
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 75px 20px;   
+    animation-name: move_rina;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+#photo:hover
+{
+    width: 70%;
+    transition: 1s ease-in-out;
+}
+
+@keyframes move_rina
+{
+    0% 
+    {
+        opacity: 0;
+        object-position: 0 0;
+    }
+    50%
+    {
+        opacity: 100%;
+    }
+    100%
+    {
+        object-position: 45%;
+    }
+}
+
+#sidebar
+{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    margin: 20px;
+    animation: move_sidebar 10s linear;
+    animation-fill-mode: forwards;
+    transition: 1s ease-in-out;
+}
+
+#sidebar:hover
+{
+    width: 70%;
+    transition: 1s ease-in-out;
+}
+
+@keyframes move_sidebar
+{
+    0%
+    {
+        opacity: 0%
+    }
+    5% 
+    {
+        transform: translateY(100);
+        opacity: 0%;
+    }
+    30%
+    {
+        opacity: 100%;
+
+    }
+    100%
+    {
+        transform: translateY(0);
+    }
+}
+
+#welcome
+{
+    font-size: 2.0em;
+    font-weight: bold;
+}
+
+#today
+{
+    font-size: 1.4em;
+}
+
+.normaltext
+{
+    margin-top: 40px;
+    font-size: 1.4em;
+}
+
+#navigation
+{
+    margin: 10px 0;;
+    font-size: 1.2em;
+    display: flex;
+    width: 100%;
+}
+
+#navigation > div
+{
+    width: 200px;
+}
