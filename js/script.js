@@ -13,6 +13,9 @@ function init()
                 $("body").css("background", "#202020")
                 isUrl = false
                 break
+            case "Backspace":
+                $("#search-box").focus()
+                break;
             case "Enter":
                 var display = $("#search").css("display")
                 if (display == "none" || display == "" )
