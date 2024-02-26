@@ -3,6 +3,7 @@ var isUrl = false
 
 function init()
 {
+    $("#search-box").val("")
     document.addEventListener('keydown', function handleKeyPress (event) {
         var key = event.key
         switch (key) {                
