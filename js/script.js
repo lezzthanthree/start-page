@@ -4,23 +4,19 @@ function init()
 {
     document.addEventListener('keydown', function handleKeyPress (event) {
         var key = event.key
-        switch (key) {
-            case "Backspace":
-                if (search.length > 0)
-                {
-                    search = search.substring(0, search.length - 1)
-                }
-                break
-                
+        switch (key) {                
             case "Escape":
                 search = ""
+                $("#search-box").val("")
                 $("#search").fadeOut(300, () => $("main").fadeIn(300))
                 break
             case "Enter":
-                if (document.getElementById("search").style.display == "none" || document.getElementById("search").style.display == "" )
+                var display = $("#search").css("display")
+                if (display == "none" || display == "" )
                 {
                     return
                 }
+                search = $("#search-box").val()
                 if (search.length == 0)
                 {
                     search = "Rina Tennoji"
@@ -29,15 +25,20 @@ function init()
             default:
                 if (key.match(/^[\w\s\p{P}]$/u))
                 {
-                    search += key
-                    $("main").fadeOut(300, () => $("#search").fadeIn(300).css({display: "flex"}))
+                    var display = $("#search").css("display")
+                    if (display == "none" || display == "" )
+                    {
+                        $("#search-box").val($("#search-box").val() + key)
+                    }
+                    $("main").hide(300, () => $("#search").fadeIn(100).css({display: "flex"}))
+                    $("#search-box").focus()
                 }
                 break
             }
-
-            document.getElementById("search-box").value = search
+            
     })
 }
+
 
 function getTimeNow()
 {
