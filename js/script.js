@@ -18,6 +18,10 @@ function init()
                 $(".search").fadeOut(300, () => $("main").fadeIn(300))
                 break
             case "Enter":
+                if (search.length == 0)
+                {
+                    search = "Rina Tennoji"
+                }
                 window.open("https://www.google.com/search?q=" + search, "_self")
             default:
                 if (key.match(/^[\w\s\p{P}]$/u))
