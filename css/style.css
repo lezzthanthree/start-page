@@ -100,9 +100,9 @@ body
 
 main
 {
+    display: flex;
     margin: 50px;
     position: relative;
-    display: flex;
 }
 
 ul
@@ -169,17 +169,11 @@ ul
     }
     5% 
     {
-        transform: translateY(100);
         opacity: 0%;
     }
     30%
     {
         opacity: 100%;
-
-    }
-    100%
-    {
-        transform: translateY(0);
     }
 }
 
@@ -211,4 +205,32 @@ ul
 #navigation > div
 {
     width: 200px;
+}
+
+.search
+{
+    display: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-box
+{
+    height: 40px;
+    width: 50%;
+    color: #0f0f0f;
+    align-items: center;
+    border-radius: 15px;
+    padding: 0px 10px;
+    margin: 10px 0px;
+    outline: none;
+    pointer-events: none;
+}
+
+#search-text, .search-tip
+{
+    margin-top: 10px
 }

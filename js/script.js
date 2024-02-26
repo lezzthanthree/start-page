@@ -1,3 +1,37 @@
+var search = ""
+
+function init()
+{
+    document.addEventListener('keydown', function handleKeyPress (event) {
+        var key = event.key
+        switch (key) {
+            case "Backspace":
+                if (search.length > 0)
+                {
+                    search = search.substring(0, search.length - 1)
+                    console.log(search)
+                }
+                break
+                
+            case "Escape":
+                search = ""
+                $(".search").fadeOut(300, () => $("main").fadeIn(300))
+                break
+            case "Enter":
+                window.open("https://www.google.com/search?q=" + search, "_self")
+            default:
+                if (key.match(/^[\w\s\p{P}]$/u))
+                {
+                    search += key
+                    $("main").fadeOut(300, () => $(".search").fadeIn(300).css({display: "flex"}))
+                }
+                break
+            }
+
+            document.getElementById("search-box").value = search
+    })
+}
+
 function getTimeNow()
 {
     let date = new Date()
@@ -21,3 +55,5 @@ function setSpan()
 setInterval(
     () => setSpan(), 500
 )
+
+init()
