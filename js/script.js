@@ -9,7 +9,6 @@ function init()
                 if (search.length > 0)
                 {
                     search = search.substring(0, search.length - 1)
-                    console.log(search)
                 }
                 break
                 
