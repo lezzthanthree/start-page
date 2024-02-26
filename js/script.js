@@ -15,9 +15,13 @@ function init()
                 
             case "Escape":
                 search = ""
-                $(".search").fadeOut(300, () => $("main").fadeIn(300))
+                $("#search").fadeOut(300, () => $("main").fadeIn(300))
                 break
             case "Enter":
+                if (document.getElementById("search").style.display == "none" || document.getElementById("search").style.display == "" )
+                {
+                    return
+                }
                 if (search.length == 0)
                 {
                     search = "Rina Tennoji"
@@ -27,7 +31,7 @@ function init()
                 if (key.match(/^[\w\s\p{P}]$/u))
                 {
                     search += key
-                    $("main").fadeOut(300, () => $(".search").fadeIn(300).css({display: "flex"}))
+                    $("main").fadeOut(300, () => $("#search").fadeIn(300).css({display: "flex"}))
                 }
                 break
             }
