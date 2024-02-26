@@ -1,4 +1,5 @@
 var search = ""
+var isUrl = false
 
 function init()
 {
@@ -9,6 +10,8 @@ function init()
                 search = ""
                 $("#search-box").val("")
                 $("#search").fadeOut(300, () => $("main").fadeIn(300))
+                $("body").css("background", "#202020")
+                isUrl = false
                 break
             case "Enter":
                 var display = $("#search").css("display")
@@ -20,6 +23,15 @@ function init()
                 if (search.length == 0)
                 {
                     search = "Rina Tennoji"
+                }
+                if (isUrl)
+                {
+                    if (!search.startsWith("http"))
+                    {
+                        search = "https://" + search
+                    }
+                    window.open(search, "_self")
+                    return
                 }
                 window.open("https://www.google.com/search?q=" + search, "_self")
             default:
@@ -37,8 +49,19 @@ function init()
             }
             
     })
+    document.querySelector("#search-box").addEventListener("input", (event) => {
+        var data = event.target.value
+        console.log(data)
+        if (/^www\./i.test(data) || /^https:\/\//i.test(data) || /\.com$/.test(data))
+        {
+            $("body").css("background", "#115511")
+            isUrl = true
+            return
+        }
+        isUrl = false
+        $("body").css("background", "#202020")
+    })
 }
-
 
 function getTimeNow()
 {
