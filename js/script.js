@@ -57,7 +57,7 @@ function init()
         console.log(data)
         if (/^www\./i.test(data) || /^https:\/\//i.test(data) || /\.com$/.test(data))
         {
-            $("body").css("background", "#115511")
+            $("body").css("background", "#114411")
             isUrl = true
             return
         }
