@@ -242,13 +242,22 @@ ul
 {
     display: flex;
     flex-direction: column;
-    font-size: 2em;
+    font-size: 1.5em;
     align-items: center;
 }
 
 .chibi
 {
     position: absolute;
-    right: 0px;
     bottom: 20px
+}
+
+.left
+{
+    left: 0px;
+}
+
+.right
+{
+    right: 0px;
 }
