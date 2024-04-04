@@ -208,7 +208,7 @@ ul
     width: 200px;
 }
 
-#search
+#search, #research
 {
     display: none;
     width: 100%;
@@ -231,7 +231,24 @@ ul
     pointer-events: none;
 }
 
-#search-text, .search-tip
+#search-text, .search-tip, #research-text
 {
     margin-top: 10px
+}
+
+
+
+#research-list
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+    align-items: center;
+}
+
+.chibi
+{
+    position: absolute;
+    right: 0px;
+    bottom: 20px
 }
