@@ -77,7 +77,7 @@ function init() {
         if (
             /^www\./i.test(data) ||
             /^https:\/\//i.test(data) ||
-            /\.com$/.test(data)
+            /\.[a-zA-Z]{2,4}\b/.test(data)
         ) {
             $("body").css("background", "#114411");
             isUrl = true;
